@@ -1,4 +1,4 @@
-# Text classification tensorflow pretrained embedding bidirectional RNN model
+# Text classification tensorflow pretrained word2vec embedding bidirectional RNN model
 
 ## Navigatie Code
 
