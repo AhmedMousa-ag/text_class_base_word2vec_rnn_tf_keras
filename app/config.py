@@ -53,7 +53,7 @@ check_dir(MODEL_SAVE_PATH)
 
 
 
-EMBED_DIM = 300
+EMBED_DIM = os.getenv("embed_dim")
 TRAINED_EMBEDD_PATH = os.path.join(MODEL_SAVE_PATH,"trained_embed",f"glove.6B.{EMBED_DIM}d.txt")
 check_dir(TRAINED_EMBEDD_PATH)
 
