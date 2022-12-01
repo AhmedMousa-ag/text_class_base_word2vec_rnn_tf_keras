@@ -8,8 +8,8 @@ def check_dir(dir_path):
         os.makedirs(dir_path)
 
 
-prefix = os.path.join(os.pardir, 'ml_vol')
-#prefix = os.path.join('opt','ml_vol')
+#prefix = os.path.join(os.pardir, 'ml_vol')
+prefix = os.path.join('opt','ml_vol')
 
 
 RAND_SEED = 42
@@ -51,7 +51,10 @@ MODEL_NAME = "tf_bidirectional_text_class"
 MODEL_SAVE_PATH = os.path.join(prefix, 'model', 'artifacts')
 check_dir(MODEL_SAVE_PATH)
 
-TRAINED_EMBEDD_PATH = os.path.join(MODEL_SAVE_PATH,"trained_embed")
+
+
+EMBED_DIM = 300
+TRAINED_EMBEDD_PATH = os.path.join(MODEL_SAVE_PATH,"trained_embed",f"glove.6B.{EMBED_DIM}d.txt")
 check_dir(TRAINED_EMBEDD_PATH)
 
 # os.path.join("Utils","preprocess","artifacts")
