@@ -51,6 +51,8 @@ MODEL_NAME = "tf_bidirectional_text_class"
 MODEL_SAVE_PATH = os.path.join(prefix, 'model', 'artifacts')
 check_dir(MODEL_SAVE_PATH)
 
+TRAINED_EMBEDD_PATH = os.path.join(MODEL_SAVE_PATH,"trained_embed")
+check_dir(TRAINED_EMBEDD_PATH)
 
 # os.path.join("Utils","preprocess","artifacts")
 PREPROCESS_ARTIFACT_PATH = MODEL_SAVE_PATH
