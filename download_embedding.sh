@@ -1,7 +1,5 @@
 
 
-export embed_dim=100 #Must be declared as it will be used for training. #available dims are 100, 300 and 500 
-export embed_file_name=enwiki_20180420_"$embed_dim"d.txt #Must be decleared as it will be used during training
 
 # For refrencess please visit https://wikipedia2vec.github.io/wikipedia2vec/pretrained/
 
