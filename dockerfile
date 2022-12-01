@@ -17,7 +17,7 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt 
 
 COPY ./download_embedding.sh .
-RUN download_embedding.sh 
+RUN ./download_embedding.sh 
 
 COPY app ./opt/app
 
