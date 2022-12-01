@@ -14,6 +14,7 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 MODEL_NAME = config.MODEL_NAME
 MODEL_SAVE_PATH = config.MODEL_SAVE_PATH
 TRAINED_EMBEDD_PATH = config.TRAINED_EMBEDD_PATH
+EMBED_DIM = config.EMBED_DIM
 
 seed = config.RAND_SEED
 tf.random.set_seed(seed)
@@ -38,7 +39,7 @@ class RNN_pretrained_embed():
         # We defined output lenght during preprocessing, now getting it for embedding layer
         max_length = len(tf.squeeze(text_vectorizer(["dsads"])))
 
-        embedding_dim = 300
+        embedding_dim = EMBED_DIM
         num_tokens = len(voc) + 2
         embed_layer = Embedding(num_tokens,
                                 embedding_dim,
@@ -101,10 +102,9 @@ class RNN_pretrained_embed():
 
     def get_trained_embedd_matrix(self, voc, embed_dim, trained_embedd_path=None):
         train_embed_path = trained_embedd_path if trained_embedd_path else TRAINED_EMBEDD_PATH
-        path = os.path.join(train_embed_path,"glove.6B.300d.txt")
 
         embeddings_index = {}
-        with open(path) as f:
+        with open(train_embed_path) as f:
             for line in f:
                 word, coefs = line.split(maxsplit=1)
                 coefs = np.fromstring(coefs, "f", sep=" ")
