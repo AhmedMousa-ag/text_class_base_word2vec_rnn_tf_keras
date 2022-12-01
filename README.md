@@ -1,6 +1,14 @@
-# text_classification_tensorflow_bidirectional_RNN_model
+# Text classification tensorflow pretrained embedding bidirectional RNN model
 
 ## Navigatie Code
+
+This code uses a pretrained word2vec embedding with a biderictional layers with tensorflow.
+
+### download_embedding.sh
+
+Only change this file if you would like to change the trained embedding layer.
+
+It downloads the the embedding layer and export environment variables for later when training the model.
 
 ### app:
 
