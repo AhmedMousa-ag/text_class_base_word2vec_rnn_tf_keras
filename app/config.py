@@ -54,7 +54,8 @@ check_dir(MODEL_SAVE_PATH)
 
 
 EMBED_DIM = os.getenv("embed_dim")
-TRAINED_EMBEDD_PATH = os.path.join(MODEL_SAVE_PATH,"trained_embed",f"glove.6B.{EMBED_DIM}d.txt")
+embed_file_name = os.getenv("embed_file_name")
+TRAINED_EMBEDD_PATH = os.path.join(MODEL_SAVE_PATH,"trained_embed",embed_file_name)
 check_dir(TRAINED_EMBEDD_PATH)
 
 # os.path.join("Utils","preprocess","artifacts")
