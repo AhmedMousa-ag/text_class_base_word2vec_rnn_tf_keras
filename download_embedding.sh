@@ -9,6 +9,8 @@ wget -P /tmp http://wikipedia2vec.s3.amazonaws.com/models/en/2018-04-20/"$embed_
 
 bzip2 -d -q /tmp/"$embed_file_name".bz2
 
+mkdir -p /opt/app/model/artifacts/trained_embed/
+
 cp /tmp/"$embed_file_name" /opt/app/model/artifacts/trained_embed/
 
 
