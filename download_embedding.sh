@@ -12,5 +12,5 @@ unzip -q /temp/"$embed_file_name".bz2
 cp /temp/"$embed_file_name" /opt/app/model/artifacts/trained_embed/
 
 
-echo "export embed_dim=$embed_dim" > ~/.profile
-echo "export embed_file_name=$embed_file_name" > ~/.profile
+echo 'export embed_dim=$embed_dim' >> ~/.profile
+echo 'export embed_file_name=$embed_file_name' >> ~/.profile
