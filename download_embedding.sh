@@ -7,9 +7,9 @@ export embed_file_name=enwiki_20180420_"$embed_dim"d.txt
 
 wget -P /tmp http://wikipedia2vec.s3.amazonaws.com/models/en/2018-04-20/"$embed_file_name".bz2
 
-bzip2 -d -q /temp/"$embed_file_name".bz2
+bzip2 -d -q /tmp/"$embed_file_name".bz2
 
-cp /temp/"$embed_file_name" /opt/app/model/artifacts/trained_embed/
+cp /tmp/"$embed_file_name" /opt/app/model/artifacts/trained_embed/
 
 
 echo 'export embed_dim=$embed_dim' >> ~/.profile
