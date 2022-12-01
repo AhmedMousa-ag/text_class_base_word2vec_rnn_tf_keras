@@ -19,10 +19,16 @@ RUN pip install -r requirements.txt
 COPY ./download_embedding.sh .
 RUN ./download_embedding.sh 
 
+
 COPY app ./opt/app
 
 WORKDIR /opt/app
 
+ENV embed_dim=100
+ENV embed_file_name=enwiki_20180420_"$embed_dim"d.txt
+
+COPY ./assign.sh .
+RUN ./assign.sh
 
 ENV PYTHONUNBUFFERED=TRUE
 ENV PYTHONDONTWRITEBYTECODE=TRUE

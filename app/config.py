@@ -53,8 +53,11 @@ check_dir(MODEL_SAVE_PATH)
 
 
 
-EMBED_DIM = os.getenv("embed_dim")
+EMBED_DIM = int(os.getenv("embed_dim"))
 embed_file_name = os.getenv("embed_file_name")
+
+print(f"embed dim: {EMBED_DIM}")
+print(f"file embed name: {embed_file_name}")
 check_dir(os.path.join(MODEL_SAVE_PATH,"trained_embed"))
 TRAINED_EMBEDD_PATH = os.path.join(MODEL_SAVE_PATH,"trained_embed",embed_file_name)
 
