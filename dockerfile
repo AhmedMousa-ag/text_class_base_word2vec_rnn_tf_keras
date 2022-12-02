@@ -13,7 +13,7 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt 
 
 
-ENV embed_dim=100
+ENV embed_dim=500
 ENV embed_file_name=enwiki_20180420_"$embed_dim"d.txt
 
 COPY ./download_embedding.sh .
