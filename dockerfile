@@ -9,15 +9,18 @@ RUN apt-get -y update && \
     && rm -rf /var/lib/apt/lists/*
 
 
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt 
+ARG embed_dim=500
 
-
-ENV embed_dim=500
+ENV embed_dim=${embed_dim} 
 ENV embed_file_name=enwiki_20180420_"$embed_dim"d.txt
 
 COPY ./download_embedding.sh .
 RUN ./download_embedding.sh 
+
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt 
+
+
 
 
 COPY app ./opt/app
