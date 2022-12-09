@@ -68,6 +68,9 @@ PRETRAINED_EMBEDD_PATH = os.path.join(
     app_prefix, "Utils", "pretrained_embed", embed_file_name
 )
 
+check_dir(os.path.join(
+    app_prefix, "Utils", "pretrained_embed"))
+
 # os.path.join("Utils","preprocess","artifacts")
 PREPROCESS_ARTIFACT_PATH = MODEL_SAVE_PATH
 check_dir(PREPROCESS_ARTIFACT_PATH)
