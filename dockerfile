@@ -9,23 +9,28 @@ RUN apt-get -y update && \
     && rm -rf /var/lib/apt/lists/*
 
 
-ARG embed_dim=500
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt 
 
-ENV embed_dim=${embed_dim} 
+ENV embed_dim=100 
 ENV embed_file_name=enwiki_20180420_"$embed_dim"d.txt
 
 COPY ./download_embedding.sh .
 RUN ./download_embedding.sh 
 
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt 
-
-
+RUN echo "hello world"
 
 
 COPY app ./opt/app
-WORKDIR /opt/app
 
+
+
+COPY ./copy_embedding_file.sh .
+RUN ./copy_embedding_file.sh 
+
+
+
+WORKDIR /opt/app
 
 
 ENV PYTHONUNBUFFERED=TRUE
@@ -37,4 +42,3 @@ ENV PATH="/opt/app:${PATH}"
 RUN chmod +x train &&\
     chmod +x predict &&\
     chmod +x serve 
-
